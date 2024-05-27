@@ -3,20 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Descruba o seu personagem Rick and Morty</title>
-    <script src="api.js"></script>
+    <title>Descubra o seu personagem Rick and Morty</title>
+    <script src="api.js" defer></script>
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
 
-    <h1><strong>Quem é você no mundo de Rick and Morty ?</strong></h1>
-        <div>
-          <button class="btn" id="btn" onclick="iniciar(event)" >Click aqui e descubra!!</button>
-        </div>
-    <form class="formulario hidden" id="formulario">
-        <div id="charConteudo"></div>
-       
-    </form>
+    <div class="container">
+        <h1><strong>Quem é você no mundo de Rick and Morty?</strong></h1>
+        <button class="btn" id="btn" onclick="iniciar(event)">Click aqui e descubra!!</button>
+        <form class="formulario hidden" id="formulario">
+            <div id="charConteudo"></div>
+            <audio id="backgroundMusic" src="./music/musicIntro.mp3"></audio>
+        </form>
+
+    </div>
     
 </body>
 </html>

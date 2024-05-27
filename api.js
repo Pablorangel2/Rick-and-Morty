@@ -65,7 +65,7 @@ function criarInputsPersonagem(personagem) {
     div.style.alignItems = 'center';
     div.style.marginLeft = '12px';
     div.style.marginTop = '12px'
-    div.style.fontSize = '20px'
+    div.style.fontSize = '22px'
 
     // Nome
     const nomeInput = document.createElement('input');
@@ -123,7 +123,10 @@ async function iniciar(event) {
     console.log('Você é: ', personagemAleatorio);
     criarInputsPersonagem(personagemAleatorio);
 
-    document.querySelector('.formulario').classList.remove('hidden');
+    document.querySelector('.formulario').classList.remove('hidden'); // oculta formulario
+
+    const music = document.getElementById('backgroundMusic');  //tocar a musica..
+    music.play();
 }
 
 // Adiciona um evento de clique ao botão após o carregamento da página

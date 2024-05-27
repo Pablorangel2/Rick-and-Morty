@@ -17,38 +17,35 @@ body {
 /* Estilos para o contêiner principal */
 .container {
     text-align: center;
-    max-width: 600px;
-    padding: 40px;
+    max-width: 90%;
+    padding: 2rem;
     border-radius: 10px;
     background-color: rgba(0, 0, 0, 0.7);
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 /* Estilos para o título */
 h1 {
-    font-size: 36px;
-    margin-bottom: 30px;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    position: relative;
-    bottom: 19rem;
-    left: 7rem;
 }
 
 /* Estilos para o botão */
 .btn {
     cursor: pointer;
     font-weight: bold;
-    font-size: 18px;
-    padding: 12px 24px;
+    font-size: 1rem;
+    padding: 0.75rem 1.5rem;
     border: none;
-    margin-left: 5px;
+    margin-bottom: 1.5rem;
     border-radius: 5px;
     background-color: #446db9;
     color: white;
     transition: background-color 0.3s, color 0.3s;
-    position: relative;
-    bottom: 14rem;
-    right: 22rem;
 }
 
 .btn:hover {
@@ -57,23 +54,26 @@ h1 {
 
 /* Estilos para o formulário */
 .formulario {
-    margin-top: 10px;
+    margin-top: 1rem;
+    width: 100%;
 }
 
 .hidden {
     display: none;
 }
+
 /* Estilos para os inputs */
 input {
-    width: 92%;
-    padding: 14px;
-    margin-bottom: 10px;
+    width: calc(100% - 1.5rem);
+    padding: 0.75rem;
+    margin-bottom: 1rem;
     border: none;
     border-radius: 5px;
     background-color: rgba(255, 255, 255, 0.9);
-    color: #333;
-    font-size: 16px;
+    color: #000000;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    font-weight: bold;
+    text-align: center;
 
 }
 
@@ -81,14 +81,46 @@ input {
 .formulario img {
     max-width: 100%;
     border-radius: 10px;
-    margin-bottom: 20px;
+    margin-bottom: 1.5rem;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    
 }
 
 /* Estilos para o texto dentro do formulário */
 .formulario p {
-    font-size: 18px;
-    margin-bottom: 20px;
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
     color: #fff;
+}
+
+/* Media Queries para responsividade */
+@media (min-width: 600px) {
+    .container {
+        max-width: 600px;
+        padding: 2.5rem;
+    }
+    h1 {
+        font-size: 2.5rem;
+    }
+    .btn {
+        font-size: 1.125rem;
+        padding: 0.875rem 1.75rem;
+    }
+    input {
+        padding: 1rem;
+        font-size: 1.125rem;
+    }
+}
+
+@media (min-width: 768px) {
+    h1 {
+        font-size: 3rem;
+    }
+    .btn {
+        font-size: 1.25rem;
+        padding: 1rem 2rem;
+    }
+    input {
+        padding: 1.25rem;
+        font-size: 1.25rem;
+    }
 }

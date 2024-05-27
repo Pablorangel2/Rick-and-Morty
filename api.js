@@ -1,7 +1,10 @@
-const url = 'https://rickandmortyapi.com/api/character/';
+const baseUrl = 'https://rickandmortyapi.com/api/character/';
+const totalPages = 42; // Número total de páginas
 
-async function buscarUrl() {
-    const response = await fetch(url);
+// Função para buscar uma página aleatória
+async function fetchRandomPage() {
+    const randomPage = Math.floor(Math.random() * totalPages) + 1;
+    const response = await fetch(`${baseUrl}?page=${randomPage}`);
     if (response.status === 200) {
         const data = await response.json();
         return data.results;
@@ -11,15 +14,15 @@ async function buscarUrl() {
     }
 }
 
-function escolherChar(chars, num) {
-    const itensEscolhidos = [];
-    const copiaChars = chars.slice();
-
-    for (let i = 0; i < num; i++) {
-        const indiceAleatorio = Math.floor(Math.random() * copiaChars.length);
-        itensEscolhidos.push(copiaChars.splice(indiceAleatorio, 1)[0]);
+// Função para buscar um personagem aleatório
+async function fetchRandomCharacter() {
+    const characters = await fetchRandomPage();
+    if (characters.length > 0) {
+        const randomIndex = Math.floor(Math.random() * characters.length);
+        return characters[randomIndex];
+    } else {
+        return null;
     }
-    return itensEscolhidos;
 }
 
 function traduzirGenero(gender) {
@@ -41,19 +44,13 @@ function traduzirStatus(status) {
     return statusTraduzidos[status] || status;
 }
 
-function traduzirEspecie(species){
-    const especie = {
+function traduzirEspecie(species) {
+    const especies = {
         'Human': 'Humano',
-        'Alien': 'Alienigina',
+        'Alien': 'Alienígena',
         'unknown': 'Desconhecido'
-    }
-    return especie[species] || species;
-}
-
-function ocultarFormulario(){
-    if (formulario === null){
-        
-    }
+    };
+    return especies[species] || species;
 }
 
 function criarInputsPersonagem(personagem) {
@@ -63,9 +60,8 @@ function criarInputsPersonagem(personagem) {
     const div = document.createElement('div');
     div.style.color = 'white';
     div.style.alignItems = 'center';
-    div.style.marginLeft = '12px';
-    div.style.marginTop = '12px'
-    div.style.fontSize = '22px'
+    div.style.margin = '12px';
+    div.style.fontSize = '20px';
 
     // Nome
     const nomeInput = document.createElement('input');
@@ -107,8 +103,7 @@ function criarInputsPersonagem(personagem) {
     const imagem = document.createElement('img');
     imagem.src = personagem.image;
     imagem.alt = personagem.name;
-    imagem.style.width = '360px';
-    imagem.style.height = '370px';
+    imagem.style.width = '100%';
     div.appendChild(imagem);
     div.appendChild(document.createElement('br'));
 
@@ -117,16 +112,19 @@ function criarInputsPersonagem(personagem) {
 
 async function iniciar(event) {
     if (event) event.preventDefault(); // Impede o recarregamento da página se houver evento
-    const rickandmorty = await buscarUrl();
-    const personagensEscolhidos = escolherChar(rickandmorty, 20);
-    const personagemAleatorio = escolherChar(personagensEscolhidos, 10)[0];
-    console.log('Você é: ', personagemAleatorio);
-    criarInputsPersonagem(personagemAleatorio);
+    const personagemAleatorio = await fetchRandomCharacter();
+    if (personagemAleatorio) {
+        console.log('Você é: ', personagemAleatorio);
+        criarInputsPersonagem(personagemAleatorio);
 
-    document.querySelector('.formulario').classList.remove('hidden'); // oculta formulario
+        document.querySelector('.formulario').classList.remove('hidden');
 
-    const music = document.getElementById('backgroundMusic');  //tocar a musica..
-    music.play();
+        // Tocar a música
+        const music = document.getElementById('backgroundMusic');
+        music.play();
+    } else {
+        console.error('Nenhum personagem encontrado.');
+    }
 }
 
 // Adiciona um evento de clique ao botão após o carregamento da página

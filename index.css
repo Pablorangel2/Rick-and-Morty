@@ -12,13 +12,14 @@ body {
     background-repeat: no-repeat;
     color: white;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    overflow-y: auto; /* Permite rolagem vertical */
 }
 
 /* Estilos para o contêiner principal */
 .container {
     text-align: center;
-    max-width: 90%;
-    padding: 2rem;
+    max-width: 80%;
+    padding: 0.5rem;
     border-radius: 10px;
     background-color: rgba(0, 0, 0, 0.7);
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
@@ -29,8 +30,8 @@ body {
 
 /* Estilos para o título */
 h1 {
-    font-size: 2rem;
-    margin-bottom: 1.5rem;
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
@@ -38,10 +39,10 @@ h1 {
 .btn {
     cursor: pointer;
     font-weight: bold;
-    font-size: 1rem;
-    padding: 0.75rem 1.5rem;
+    font-size: 0.75rem;
+    padding: 0.5rem 1rem;
     border: none;
-    margin-bottom: 1.5rem;
+    margin-bottom: 0.5rem;
     border-radius: 5px;
     background-color: #446db9;
     color: white;
@@ -54,19 +55,15 @@ h1 {
 
 /* Estilos para o formulário */
 .formulario {
-    margin-top: 1rem;
+    margin-top: 0.5rem;
     width: 100%;
-}
-
-.hidden {
-    display: none;
 }
 
 /* Estilos para os inputs */
 input {
     width: calc(100% - 1.5rem);
-    padding: 0.75rem;
-    margin-bottom: 1rem;
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
     border: none;
     border-radius: 5px;
     background-color: rgba(255, 255, 255, 0.9);
@@ -74,53 +71,88 @@ input {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
     font-weight: bold;
     text-align: center;
-
 }
 
 /* Estilos para as imagens dentro do formulário */
 .formulario img {
     max-width: 100%;
+    height: auto; /* Garante que a imagem mantenha a proporção */
     border-radius: 10px;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 /* Estilos para o texto dentro do formulário */
 .formulario p {
-    font-size: 1rem;
-    margin-bottom: 1.5rem;
+    font-size: 0.75rem;
+    margin-bottom: 0.5rem;
     color: #fff;
 }
 
 /* Media Queries para responsividade */
 @media (min-width: 600px) {
     .container {
-        max-width: 600px;
-        padding: 2.5rem;
+        max-width: 500px;
+        padding: 1rem;
     }
     h1 {
-        font-size: 2.5rem;
+        font-size: 1.5rem;
     }
     .btn {
-        font-size: 1.125rem;
-        padding: 0.875rem 1.75rem;
+        font-size: 0.875rem;
+        padding: 0.5rem 1rem;
     }
     input {
-        padding: 1rem;
-        font-size: 1.125rem;
+        padding: 0.625rem;
+        font-size: 0.875rem;
     }
 }
 
+/* Ajustes específicos para diferentes resoluções */
 @media (min-width: 768px) {
+    .container {
+        max-width: 60%;
+        padding: 0.5rem;
+    }
     h1 {
-        font-size: 3rem;
+        font-size: 1.25rem;
     }
     .btn {
-        font-size: 1.25rem;
-        padding: 1rem 2rem;
+        font-size: 0.75rem;
+        padding: 0.5rem 1rem;
     }
     input {
-        padding: 1.25rem;
-        font-size: 1.25rem;
+        padding: 0.5rem;
+        font-size: 0.875rem;
+    }
+}
+
+@media (min-width: 864px) {
+    .container {
+        max-width: 70%;
+    }
+}
+
+@media (min-width: 900px) {
+    .container {
+        max-width: 75%;
+    }
+}
+
+@media (min-width: 1024px) {
+    .container {
+        max-width: 80%;
+    }
+}
+
+@media (min-width: 1600px) {
+    .container {
+        max-width: 85%;
+    }
+}
+
+@media (min-width: 1920px) {
+    .container {
+        max-width: 90%;
     }
 }

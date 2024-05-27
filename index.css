@@ -1,0 +1,94 @@
+/* Estilos para o corpo da página */
+body {
+    background-image: url(./img/rickandmorty.jpg);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Estilos para o contêiner principal */
+.container {
+    text-align: center;
+    max-width: 600px;
+    padding: 40px;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.7);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+}
+
+/* Estilos para o título */
+h1 {
+    font-size: 36px;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    position: relative;
+    bottom: 19rem;
+    left: 7rem;
+}
+
+/* Estilos para o botão */
+.btn {
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 18px;
+    padding: 12px 24px;
+    border: none;
+    margin-left: 5px;
+    border-radius: 5px;
+    background-color: #446db9;
+    color: white;
+    transition: background-color 0.3s, color 0.3s;
+    position: relative;
+    bottom: 14rem;
+    right: 22rem;
+}
+
+.btn:hover {
+    background-color: #1b4da0;
+}
+
+/* Estilos para o formulário */
+.formulario {
+    margin-top: 10px;
+}
+
+.hidden {
+    display: none;
+}
+/* Estilos para os inputs */
+input {
+    width: 92%;
+    padding: 14px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #333;
+    font-size: 16px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+
+}
+
+/* Estilos para as imagens dentro do formulário */
+.formulario img {
+    max-width: 100%;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    
+}
+
+/* Estilos para o texto dentro do formulário */
+.formulario p {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: #fff;
+}

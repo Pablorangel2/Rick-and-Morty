@@ -17,7 +17,7 @@ async function fetchRandomPage() {
 // Função para buscar um personagem aleatório
 async function fetchRandomCharacter() {
     const characters = await fetchRandomPage();
-    if (characters.length > 0) {
+    if (characters.length >= 0) {
         const randomIndex = Math.floor(Math.random() * characters.length);
         return characters[randomIndex];
     } else {
